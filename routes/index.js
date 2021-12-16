@@ -10,12 +10,10 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/sign-up", (req, res, next) => {
-  res.render("auth/sign-up");
+  res.render("sign-up");
 });
 
 router.post("/sign-up", (req, res, next) => {
-  // console.log("The form data: ", req.body);
-
   const { username, email, password } = req.body;
 
   bcryptjs
@@ -39,6 +37,6 @@ router.post("/sign-up", (req, res, next) => {
     .catch((error) => next(error));
 });
 // GET route --> user profile, render user-profile.hbs
-router.get("/userProfile", (req, res) => res.render("users/userProfile"));
+router.get("/userProfile", (req, res) => res.render("userProfile"));
 
 module.exports = router;
